@@ -13,7 +13,7 @@
 </head>
 <body>
     <h2>CADASTRO DE USUÁRIO</h2>
-    <form action="">
+    <form action=""method="post">
         <label>Nome:</label>
         <input type="text" name="nome" id="" placeholer="Digite seu Nome.">
         <label>Telefone:</label>
@@ -38,7 +38,7 @@
             $telefone = $_POST['tel'];
             $email = $_POST['email'];
             $senha = $_POST['senha'];
-            $confSenha = addcslashes($_POST['confSenha']);
+            $confSenha = addslashes($_POST['confSenha']);
 
             //verificar se todos os campos estão preenchidos
             if(!empty($nome) && !empty($telefone) && !empty($email) && !empty($senha) && !empty($confSenha))
@@ -70,7 +70,7 @@
                                    </div>
                                    <!-- fim da área do HTML  -->
                                    
-                                   <?php
+                            <?php
                         }
                     }
                     else 
@@ -92,7 +92,7 @@
 
                     <!-- essa parte pertence ao HTML  -->
                     <div id="msn-sucesso">
-                            <?php echo "ERRO:" .usuario->msgErro;?>
+                            <?php echo "ERRO:".$usuario->msgErro;?>
                     </div>
                     <!-- fim da área do HTML  -->
                     

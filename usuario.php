@@ -4,7 +4,8 @@
 
         public $msgErro="";
 
-        public function conectar($nome, $host, $usuario, $senha){
+        public function conectar($nome, $host, $usuario, $senha)
+        {
             global $pdo;
 
             try{
@@ -22,7 +23,7 @@
                 //verificar se o email já está cadastrado
             $sql = $pdo->prepare("SELECT id_usuario from usuarios where email = :m");
                 //prepare esconde a informação
-            $sql->brindValue(":m", $email); //apilido da função 
+            $sql->bindValue(":m", $email); //apilido da função 
             $sql->execute();
             if($sql->rowCount()>0){
                 return false;
